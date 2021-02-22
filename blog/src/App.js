@@ -1,23 +1,81 @@
-import logo from './logo.svg';
-import './App.css';
+/* eslint-disable */
+
+import React, { useState } from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
+  let post = "Easy data binding";
+
+  let cssExample = { color: "Red", fontSize: "40px" };
+
+  let [textTitle, titleChange] = useState(["react", "vue", "angular"]);
+  let [like0, likeChange0] = useState(0);
+  let [like1, likeChange1] = useState(0);
+  let [like2, likeChange2] = useState(0);
+
+  function greatNum() {
+    return "this tis greatNum function!";
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="black-nav">
+        <div style={cssExample}> Development Blog </div>
+      </div>
+      <h4> {greatNum()} </h4>
+      <h5> {post} </h5>
+
+      <div className="list">
+        <h3>
+          {" "}
+          {textTitle[0]}{" "}
+          <span
+            onClick={() => {
+              likeChange0(like + 1);
+            }}
+          >
+            {" "}
+            👌{" "}
+          </span>{" "}
+          {like0}{" "}
+        </h3>
+        <p>Date: 22.02.2021 </p>
+
+        <div className="list">
+          <h3>
+            {" "}
+            {textTitle[1]}{" "}
+            <span
+              onClick={() => {
+                likeChange1(like1 + 1);
+              }}
+            >
+              {" "}
+              👌{" "}
+            </span>{" "}
+            {like1}{" "}
+          </h3>
+          <p>Date: 22.02.2021 </p>
+
+          <div className="list">
+            <h3>
+              {" "}
+              {textTitle[2]}{" "}
+              <span
+                onClick={() => {
+                  likeChange2(like2 + 1);
+                }}
+              >
+                {" "}
+                👌{" "}
+              </span>{" "}
+              {like2}{" "}
+            </h3>
+            <p>Date: 22.02.2021 </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
