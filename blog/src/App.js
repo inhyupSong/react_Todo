@@ -32,7 +32,7 @@ function App() {
           {textTitle[0]}{" "}
           <span
             onClick={() => {
-              likeChange0(like + 1);
+              likeChange0(like0 + 1);
             }}
           >
             {" "}
